@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -48,6 +49,7 @@ public class ViewsTourDataActivity extends AppCompatActivity {
                     tTourDatabaseReference.push().setValue(tours);
                     tHeadEditText.setText("");
                     tDescriptionEditText.setText("");
+                    Toast.makeText(ViewsTourDataActivity.this, "Information saved...",Toast.LENGTH_SHORT).show();
                 }
             });
         }
