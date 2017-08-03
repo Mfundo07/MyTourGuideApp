@@ -9,8 +9,8 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,7 +29,8 @@ public class ViewsTourDataActivity extends AppCompatActivity {
     private static final int RC_PHOTO_PICKER =  2;
     private EditText tHeadEditText;
     private EditText tDescriptionEditText;
-    private ImageButton tPhotoPickerButton;
+    private Button tPhotoPickerButton;
+    private Button tSendButton;
     DatabaseReference tTourDatabaseReference;
     private StorageReference tTourPhotosStorageReference;
 
@@ -63,9 +64,10 @@ public class ViewsTourDataActivity extends AppCompatActivity {
 
         tTourPhotosStorageReference = FirebaseStorage.getInstance().getReference().child("photos_tour");
 
-        tPhotoPickerButton = (ImageButton) findViewById(R.id.photoPickerButton);
+        tPhotoPickerButton = (Button) findViewById(R.id.photoPickerButton);
         tHeadEditText = (EditText) findViewById(R.id.headEditText);
         tDescriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
+        tSendButton = (Button) findViewById(R.id.sendButton);
 
 
 
@@ -81,6 +83,15 @@ public class ViewsTourDataActivity extends AppCompatActivity {
 
             }
         });
+        tSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Tours tours = new Tours(tHeadEditText.getText().toString(),tDescriptionEditText.getText().toString(),null);
+                tTourDatabaseReference.push().setValue(tours);
+            }
+        });
+
+
 
 
 
