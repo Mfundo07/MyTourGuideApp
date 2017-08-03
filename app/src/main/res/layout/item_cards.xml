@@ -32,19 +32,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="bottom"
                 android:text="Heading"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textStyle="bold"
                 />
 
             <TextView
-                android:id="@+id/descr_view"
+                android:id="@+id/address_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="top"
-                android:text="Description"/>
+                android:layout_gravity="center"
+                android:text="Address"/>
+            <TextView
+                android:id="@+id/telephone_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Telephone"/>
 
     </LinearLayout>
 
