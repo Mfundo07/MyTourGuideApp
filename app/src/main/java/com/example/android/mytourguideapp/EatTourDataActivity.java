@@ -24,19 +24,18 @@ import com.google.firebase.storage.UploadTask;
  * Created by Admin on 7/31/2017.
  */
 
-public class ViewsTourDataActivity extends AppCompatActivity {
+public class EatTourDataActivity extends AppCompatActivity {
     public static final int DEFAULT_MSG_LENGTH_LIMIT = 1000;
     private static final int RC_PHOTO_PICKER =  2;
     private EditText tHeadEditText;
     private EditText tDescriptionEditText;
     private Button tPhotoPickerButton;
-    private Button tSendButton;
+    DatabaseReference tTourDatabaseReference;
+    private StorageReference tTourPhotosStorageReference;
     private EditText tAddressEditText;
     private EditText tTelephoneEditText;
     private EditText tHoursTextEdit;
-    DatabaseReference tTourDatabaseReference;
-    private StorageReference tTourPhotosStorageReference;
-
+    private Button tSendButton;
 
 
     @Override
@@ -49,14 +48,14 @@ public class ViewsTourDataActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Uri downloadUri = taskSnapshot.getDownloadUrl();
-                    Tours tours = new Tours(tHeadEditText.getText().toString(),tDescriptionEditText.getText().toString(),downloadUri.toString(),tAddressEditText.getText().toString(),tHoursTextEdit.getText().toString(),tTelephoneEditText.getText().toString());;
+                    Tours tours = new Tours(tHeadEditText.getText().toString(),tDescriptionEditText.getText().toString(),downloadUri.toString(),tAddressEditText.getText().toString(),tHoursTextEdit.getText().toString(),tTelephoneEditText.getText().toString());
                     tTourDatabaseReference.push().setValue(tours);
                     tHeadEditText.setText("");
                     tDescriptionEditText.setText("");
                     tAddressEditText.setText("");
                     tTelephoneEditText.setText("");
                     tHoursTextEdit.setText("");
-                    Toast.makeText(ViewsTourDataActivity.this, "Information saved...",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EatTourDataActivity.this, "Information saved...",Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -66,21 +65,31 @@ public class ViewsTourDataActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_data);
-        tTourDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Views");
+        tTourDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Eat");
 
         tTourPhotosStorageReference = FirebaseStorage.getInstance().getReference().child("photos_tour");
 
         tPhotoPickerButton = (Button) findViewById(R.id.photoPickerButton);
         tHeadEditText = (EditText) findViewById(R.id.headEditText);
         tDescriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
-        tSendButton = (Button) findViewById(R.id.sendButton);
-        tAddressEditText = (EditText) findViewById(R.id.addressEditText);
         tAddressEditText = (EditText) findViewById(R.id.addressEditText);
         tTelephoneEditText = (EditText) findViewById(R.id.telephoneEditText);
         tHoursTextEdit = (EditText) findViewById(R.id.hoursEditText);
         tSendButton = (Button) findViewById(R.id.sendButton);
 
 
+
+        tPhotoPickerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/jpeg");
+                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                startActivityForResult(Intent.createChooser(intent, "Complete action using"), RC_PHOTO_PICKER);
+
+            }
+        });
 
 
 
@@ -94,7 +103,7 @@ public class ViewsTourDataActivity extends AppCompatActivity {
                 tAddressEditText.setText("");
                 tTelephoneEditText.setText("");
                 tHoursTextEdit.setText("");
-                Toast.makeText(ViewsTourDataActivity.this, "Information saved...",Toast.LENGTH_SHORT).show();
+                Toast.makeText(EatTourDataActivity.this, "Information saved...",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -195,8 +204,6 @@ public class ViewsTourDataActivity extends AppCompatActivity {
             }
         });
         tHoursTextEdit.setFilters(new InputFilter[]{new InputFilter.LengthFilter(DEFAULT_MSG_LENGTH_LIMIT)});
-
-
 
 
 

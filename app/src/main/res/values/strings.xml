@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My TourGuide App</string>
+    <string name="app_name">Pimville</string>
 
     <string name="category_attractions">View</string>
 
@@ -7,10 +7,9 @@
 
     <string name="category_pubs">Drink</string>
 
+    <string name="attract_upload">Attract Upload</string>
+
 
     <string name="category_accommodation">Stay</string>
-    <string name="Icon_Club_described">
-        Icon, is a club foundend in soweto by the duo dj of spectacular and naves at the
-        pimville square shopping complex.
-    </string>
+    <string name="button_label">SEND</string>
 </resources>

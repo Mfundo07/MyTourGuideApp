@@ -17,6 +17,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ViewsTourDataActivity"
+            android:label="Views Editor"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
+        <activity android:name=".TourGuideActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Pimville Tour" />
+        <activity android:name=".DrinkTourDataActivity"
+            android:label="Drink Editor"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
+        <activity android:name=".EatTourDataActivity"
+            android:label="Eat Editor">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
+
+
+        <activity android:name=".StayTourDataActivity"
+            android:label="Stay Editor"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".MainActivity"/>
+
+        </activity>
+
+
     </application>
 
 </manifest>

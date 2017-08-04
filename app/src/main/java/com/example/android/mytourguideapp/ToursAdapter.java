@@ -34,7 +34,8 @@ public class ToursAdapter extends ArrayAdapter<Tours> {
 
         ImageView photoImageView = listItemView.findViewById(R.id.image_view);
         TextView headTextView =  listItemView.findViewById(R.id.head_view);
-        TextView descriptTextView = listItemView.findViewById(R.id.descr_view);
+        TextView addressTextView = listItemView.findViewById(R.id.address_view);
+        TextView telephoneTextView = listItemView.findViewById(R.id.telephone_view);
 
         Tours tour = getItem(position);
 
@@ -44,12 +45,14 @@ public class ToursAdapter extends ArrayAdapter<Tours> {
                     .load(tour.getPhotoUrl())
                     .into(photoImageView);
             headTextView.setText(tour.getHead());
-            descriptTextView.setText(tour.getDescription());
+            addressTextView.setText(tour.getAddress());
+            telephoneTextView.setText(tour.getPhone());
         }
          else{
             photoImageView.setVisibility(View.GONE);
             headTextView.setText(tour.getHead());
-            descriptTextView.setText(tour.getDescription());
+            addressTextView.setText(tour.getAddress());
+            telephoneTextView.setText(tour.getPhone());
         }
         return listItemView;
     }
