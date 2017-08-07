@@ -9,7 +9,6 @@
         android:id="@+id/image_view"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
-        android:src="@drawable/before_cookies"
         android:scaleType="centerCrop"/>
 
 

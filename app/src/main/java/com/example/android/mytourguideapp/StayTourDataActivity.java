@@ -10,6 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -226,6 +229,37 @@ public class StayTourDataActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.admin_menu,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.view_admin_menu:
+                Intent intentViews = new Intent(this, ViewsTourDataActivity.class);
+                startActivity(intentViews);
+                return true;
+            case R.id.eat_admin_menu:
+                Intent intentEat = new Intent(this,EatTourDataActivity.class);
+                startActivity(intentEat);
+                return true;
+            case R.id.drink_admin_menu:
+                Intent intentDrink  = new Intent(this,DrinkTourDataActivity.class);
+                startActivity(intentDrink);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
     }
 }

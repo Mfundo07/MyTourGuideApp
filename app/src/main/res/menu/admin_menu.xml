@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/view_admin_menu"
+        android:title="@string/attract_upload"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/eat_admin_menu"
+        android:title="@string/food_upload"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/drink_admin_menu"
+        android:title="@string/drink_upload"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/stay_admin_menu"
+        android:title="@string/stay_upload"
+        app:showAsAction="never"/>
+</menu>

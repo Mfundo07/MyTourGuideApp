@@ -7,7 +7,10 @@
 
     <string name="category_pubs">Drink</string>
 
-    <string name="attract_upload">Attract Upload</string>
+    <string name="attract_upload">View Upload</string>
+    <string name="drink_upload">Drink Upload</string>
+    <string name="food_upload">Eat Upload</string>
+    <string name="stay_upload">Stay Upload</string>
 
 
     <string name="category_accommodation">Stay</string>

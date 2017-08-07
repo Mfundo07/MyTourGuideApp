@@ -25,9 +25,6 @@
                 android:value=".MainActivity"/>
 
         </activity>
-        <activity android:name=".TourGuideActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Pimville Tour" />
         <activity android:name=".DrinkTourDataActivity"
             android:label="Drink Editor"
             android:parentActivityName=".MainActivity">

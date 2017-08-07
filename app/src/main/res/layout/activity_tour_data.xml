@@ -6,6 +6,8 @@
 
 
 
+
+
         <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -107,6 +109,9 @@
 
 
 
+
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -133,6 +138,15 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/preview_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/before_cookies"/>
+
 
 
         <Button
@@ -155,16 +169,12 @@
         android:orientation="vertical">
 
 
-
         <Button
             android:id="@+id/sendButton"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_gravity="center"
-            android:text="Add Entry"
-            />
-
-
+            android:text="Add Entry" />
 
 
     </LinearLayout>
