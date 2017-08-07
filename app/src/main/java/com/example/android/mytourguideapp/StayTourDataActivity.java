@@ -1,8 +1,10 @@
 package com.example.android.mytourguideapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -11,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -19,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.io.IOException;
 
 /**
  * Created by Admin on 7/31/2017.
@@ -40,6 +45,7 @@ public class StayTourDataActivity extends AppCompatActivity {
     private EditText tTelephoneEditText;
     private EditText tHoursTextEdit;
     private Button tSendButton;
+    private ImageView PreviewImageView;
 
 
     @Override
@@ -47,6 +53,13 @@ public class StayTourDataActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_PHOTO_PICKER && resultCode == RESULT_OK ){
             Uri selectedImageUri = data.getData();
+            try {
+                Bitmap bm = MediaStore.Images.Media.getBitmap(getContentResolver(),selectedImageUri);
+                PreviewImageView.setImageBitmap(bm);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             StorageReference photoRef = tTourPhotosStorageReference.child(selectedImageUri.getLastPathSegment());
             photoRef.putFile(selectedImageUri).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -56,6 +69,10 @@ public class StayTourDataActivity extends AppCompatActivity {
                     tTourDatabaseReference.push().setValue(tours);
                     tHeadEditText.setText("");
                     tDescriptionEditText.setText("");
+                    tAddressEditText.setText("");
+                    tTelephoneEditText.setText("");
+                    tHoursTextEdit.setText("");
+                    PreviewImageView.setVisibility(View.GONE);
                 }
             });
         }
