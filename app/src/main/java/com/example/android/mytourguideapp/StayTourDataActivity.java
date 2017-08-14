@@ -92,11 +92,13 @@ public class StayTourDataActivity extends AppCompatActivity {
         tPhotoPickerButton = (Button) findViewById(R.id.photoPickerButton);
         tHeadEditText = (EditText) findViewById(R.id.headEditText);
         tDescriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
+        tSendButton = (Button) findViewById(R.id.sendButton);
+        tAddressEditText = (EditText) findViewById(R.id.addressEditText);
         tAddressEditText = (EditText) findViewById(R.id.addressEditText);
         tTelephoneEditText = (EditText) findViewById(R.id.telephoneEditText);
         tHoursTextEdit = (EditText) findViewById(R.id.hoursEditText);
         tSendButton = (Button) findViewById(R.id.sendButton);
-
+        PreviewImageView = (ImageView) findViewById(R.id.preview_image);
 
 
 
