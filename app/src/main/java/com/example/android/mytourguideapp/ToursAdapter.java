@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Admin on 7/27/2017.
  */
 
-public class ToursAdapter extends ArrayAdapter<Tours> {
+public class  ToursAdapter extends ArrayAdapter<Tours> {
     public ToursAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Tours> objects) {
         super(context, resource, objects);
     }

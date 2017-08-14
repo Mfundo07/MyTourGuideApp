@@ -116,6 +116,7 @@ public class PubsFragment extends Fragment {
                     descriptTextView.setText(tour.getDescription());
                     addressTextView.setText(tour.getAddress());
                     telephoneTextView.setText(tour.getPhone());
+                    hoursTextView.setText(tour.getHours());
                 }
                 else{
                     photoImageView.setVisibility(View.GONE);

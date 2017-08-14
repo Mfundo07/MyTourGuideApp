@@ -12,17 +12,7 @@ public class Tours {
     String hours;
     String phone;
 
-    public String getAddress() {
-        return address;
-    }
 
-    public String getHours() {
-        return hours;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
 
     public Tours(String head, String description, String photoUrl, String address, String hours, String phone) {
 
@@ -45,6 +35,18 @@ public class Tours {
         return head;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     public Tours() {
     }
 
@@ -52,9 +54,4 @@ public class Tours {
         return description;
     }
 
-    public Tours(String head, String description, String photoUrl) {
-        this.head = head;
-        this.description = description;
-        this.photoUrl = photoUrl;
-    }
 }

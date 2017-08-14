@@ -144,8 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:src="@drawable/before_cookies"/>
+            android:scaleType="centerCrop" />
 
 
 

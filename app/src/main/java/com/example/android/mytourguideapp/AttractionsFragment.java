@@ -96,7 +96,7 @@ public class AttractionsFragment extends Fragment {
         };
         tToursHeadDatabaseReference.addChildEventListener(tChildEventListener);
 
-        tToursListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        tToursListView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -122,6 +122,7 @@ public class AttractionsFragment extends Fragment {
                     descriptTextView.setText(tour.getDescription());
                     addressTextView.setText(tour.getAddress());
                     telephoneTextView.setText(tour.getPhone());
+                    hoursTextView.setText(tour.getHours());
                 }
                 else{
                     photoImageView.setVisibility(View.GONE);

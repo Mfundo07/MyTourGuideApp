@@ -30,7 +30,8 @@
                 android:layout_margin="16dp"
                 android:text="Heading"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#212121"/>
 
             <TextView
                 android:id="@+id/profile_description"
@@ -38,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Description"
+                android:textColor="#757575"
 
                 />
 
@@ -46,21 +48,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Address" />
+                android:text="Address"
+                android:textColor="#757575"/>
 
             <TextView
                 android:id="@+id/profile_hours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Hours" />
+                android:textColor="#757575"/>
 
             <TextView
                 android:id="@+id/profile_telephone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Telephone" />
+                android:text="Telephone"
+                android:textColor="#757575"/>
         </LinearLayout>
 
 
