@@ -68,7 +68,7 @@ public class StayTourDataActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Uri downloadUri = taskSnapshot.getDownloadUrl();
-                    Tours tours = new Tours(tHeadEditText.getText().toString(),tDescriptionEditText.getText().toString(),tAddressEditText.getText().toString(),tHoursTextEdit.getText().toString(),tTelephoneEditText.getText().toString(), downloadUri.toString());
+                    Tours tours = new Tours(tHeadEditText.getText().toString(),tDescriptionEditText.getText().toString(),downloadUri.toString(),tAddressEditText.getText().toString(),tHoursTextEdit.getText().toString(),tTelephoneEditText.getText().toString());;
                     tTourDatabaseReference.push().setValue(tours);
                     tHeadEditText.setText("");
                     tDescriptionEditText.setText("");
@@ -76,11 +76,11 @@ public class StayTourDataActivity extends AppCompatActivity {
                     tTelephoneEditText.setText("");
                     tHoursTextEdit.setText("");
                     PreviewImageView.setVisibility(View.GONE);
+                    Toast.makeText(StayTourDataActivity.this, "Information saved...",Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
