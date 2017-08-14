@@ -27,6 +27,7 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/image_view"
             android:paddingLeft="16dp"
+
             android:orientation="vertical">
 
 
@@ -34,8 +35,9 @@
                 android:id="@+id/head_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:text="Heading"
+                android:maxLines="2"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textStyle="bold"
                 android:textColor="#212121"
@@ -45,7 +47,7 @@
                 android:id="@+id/address_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.3"
                 android:layout_gravity="center"
                 android:text="Address"
                 android:textColor="#757575"/>
@@ -54,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="1.1"
                 android:text="Telephone"
                 android:textColor="#757575"/>
 
